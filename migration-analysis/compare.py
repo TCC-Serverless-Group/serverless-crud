@@ -2,21 +2,6 @@ import argparse
 import subprocess
 from difflib import SequenceMatcher
 from pathlib import Path
-# from equivalences.cli import (
-#     CLI_NORMALIZATION_EQUIVALENCES,
-# )
-
-# from equivalences.environment import (
-#     ENVIRONMENT_NORMALIZATION_EQUIVALENCES,
-# )
-
-# from equivalences.openapi import (
-#     OPENAPI_NORMALIZATION_EQUIVALENCES,
-# )
-
-# from equivalences.serverless import (
-#     SERVERLESS_NORMALIZATION_EQUIVALENCES
-# )
 
 from equivalences.terraform import (
     TERRAFORM_NORMALIZATION_EQUIVALENCES,
