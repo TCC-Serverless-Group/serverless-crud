@@ -1,12 +1,12 @@
-## Guia de uso do projeto
+## Guia do projeto
 
-### para executar o projeto:
+### Necessário para executar o projeto:
 
 - Necessário ter Nodejs20 instalado na máquina
-- Serverless framework instalado
-- Ter uma conta na AWS e Google Clound Platform e fazer a configuração para se conectar
-- Ter uma conta no Supabase e executar o script presente em backend/task.sql para criar tabela necessária para crud
-- Definir nos .env do frontend e backend para correta implantação
+- Serverless framework instalado e configurado
+- Ter uma conta na AWS e GCP(Google Clound Platform) e fazer a configuração para se conectar via console
+- Ter uma conta no Supabase Cloud e executar o script presente em backend/task.sql para criar tabela necessária para o crud
+- Definir nos .env do frontend e backend para correta implantação (pois contem as variáveis de ambiente que não ficam no código)
 
 ### executar o comando para cada funcionalidade
 
@@ -15,7 +15,6 @@
 - node cli cls (para limpar os artefatos do projeto)
 
 ### Alterados na base:
-
 - cli.js
 - package.json
 
@@ -65,21 +64,17 @@ Arquitetura do comparador
                               │
                          compare.py
                               │
-                       identifica arquivo
+                    identifica arquivos
                               │
           ┌───────────────────┼───────────────────┐
           │                   │                   │
-      Terraform            OpenAPI            Serverless
+      terraform.py        /backend           Serverless.yml
+          │               /frontend               │
           │                   │                   │
-     storage.py          openapi.py         serverless.py
-     gateway.py
-     iam.py
-     providers.py
-          │
+     mapeamento          SequenceMatcher    SequenceMatcher
+     de equivalências         |                   |
           └───────────────────┬───────────────────┘
                               │
-                  mapeamento de equivalencias
                               │
-                       SequenceMatcher
                               │
                          relatório
