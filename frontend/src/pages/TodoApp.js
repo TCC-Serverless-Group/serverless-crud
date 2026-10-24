@@ -78,7 +78,7 @@ function TodoApp () {
     
       setTasks((tasks) => [...tasks, addedTodo]);
       setNewTodoText('');
-
+      fetchTasks();
     } catch (error) {
       console.error("Erro POST:", error);
     }
